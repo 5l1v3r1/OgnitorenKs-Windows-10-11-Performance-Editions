@@ -217,39 +217,44 @@ Aşağıda ► işaretinde yazdığım komutlar servisleri varsayılan haline ge
  
  ### Regedit Üzerinde Yapılan Değişiklikler
  #### Silinenler
-    • HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}
-Call :delete "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" & :: 3D Nesneler
+    • [-HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
+    • [-HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
 
 #### Eklenenler
-    • HKCR\*\shell\runas" "Sahipliği Al"
-Call :sz "HKCR\*\shell\runas" "Icon" "imageres.dll,73" & :: Sahipliği al
-Call :sz "HKCR\*\shell\runas" "NoWorkingDirectory" "" & :: Sahipliği al
-Call :vesz "HKCR\*\shell\runas\command" "cmd.exe /c takeown /f \"%1\" && ica \"%1\" /grant administrators:F" & :: Sahipliği al
-Call :sz "HKCR\*\shell\runas\command" "IsolatedCommand" "cmd.exe /c takeown /f \"%1\" && ica \"%1\" /grant administrators:F" & :: Sahipliği al
-Call :vesz "HKCR\Directory\shell\runas" "Sahipliği Al" & :: Sahipliği al
-Call :sz "HKCR\Directory\shell\runas" "Icon" "imageres.dll,73" & :: Sahipliği al
-Call :sz "HKCR\Directory\shell\runas" "NoWorkingDirectory" "" & :: Sahipliği al
-Call :vesz "HKCR\Directory\shell\runas\command" "cmd.exe /c takeown /f \"%1\" /r /d y && ica \"%1\" /grant administrators:F /t" & :: Sahipliği al
-Call :sz "HKCR\Directory\shell\runas\command" "IsolatedCommand" "cmd.exe /c takeown /f \"%1\" /r /d y && ica \"%1\" /grant administrators:F /t" & :: Sahipliği al
-Call :sz "HKCR\.bat\ShellNew" "NullFile" "" & :: Sağ tık Yeni bölümüne Bat dosyası oluşturma ekle
-Call :delete "HKCR\CABFolder\Shell\RunAs" & :: Sağ-tık CAB installer
-Call :vesz "HKCR\CABFolder\Shell\RunAs" "Yükle" & :: Sağ-tık CAB installer
-Call :sz "HKCR\CABFolder\Shell\RunAs" "HasLUAShield"  "" & :: Sağ-tık CAB installer
-Call :vesz "HKCR\CABFolder\Shell\RunAs\Command" "cmd /k dism /online /add-package /packagepath:\"%%%%1\""  & :: Sağ-tık CAB installer
-Call :dword "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SubscribedContent-338393Enabled" 0
-Call :dword "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SubscribedContent-353694Enabled" 0
-Call :dword "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" "SubscribedContent-353696Enabled" 0
-Call :sz "HKCU\Control Panel\Desktop" "AutoEndTasks" 1 
-Call :sz "HKCU\Control Panel\Desktop" "HungAppTimeout" "10000" & :: Uygulamalar cevap vermediği zaman görevi sonlandır seçeneğine basılmadan önceki bekleme süresini kısaltır.
-Call :sz "HKCU\Control Panel\Desktop" "WaitToKillAppTime" "20000" & :: Bilgisayar kapatılırken ya da oturumdan çıkılırken kullanıcı uygulamalarının kapatılması için sistem bekleme süresini kısaltır.
-Call :sz "HKCU\Control Panel\Desktop" "LowLevelHooksTimeout" "1000" & :: Cevap vermeyen hizmetlerin kapatılmasından önceki sistem bekleme süresini kısaltır.
-Call :sz "HKLM\SYSTEM\CurrentControlSet\Control" "WaitToKillServiceTimeout" "2000" & :: Bilgisayarın kapatılması sırasında durdurulacak hizmetler uyarısı geldiğinde, uygulamaların kapanması için beklenen süreyi kısaltır.
-Call :sz "HKCU\Control Panel\Desktop" "MenuShowDelay" "8" & :: Menü gösterimi bekleme süresini azaltır. Böylelikle tıklandığı zaman menüler daha hızlı gelecek.
-Call :dword "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "NoLowDiskSpaceChecks" 1 & :: Düşük Depolama alanı uyarısı devre dışı bırakılıyor...
-Call :dword "HKCU\Control Panel\Mouse" "MouseHoverTime" 8 & :: :: Farenizle birlikte bir nesnenin üzerine geldiğinizde görülen açıklamanın çıkış süresini kısaltır
-Call :dword "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "LinkResolveIgnoreLinkInfo" 1 & :: Bilgisayarınızda mevcut olmayan programlara ait kısayolların bağlantısının Windows tarafından boşa vakit harcanarak aranmasını önler
-Call :dword "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "NoResolveSearch" 1 & :: Kısayol bağlantı sorununu çözmek için Windows'un diski aramasını önler
-Call :dword "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" "NoResolveTrack" 1 & :: Kısayol bağlantı sorununu çözmek için Windows'un NTFS dosya sisteminin izleme özelliğini kullanmasını engeller
+    ► ;Sağ tık Yeni bölümüne Bat dosyası oluşturma ekle
+      • [HKCR\.bat\ShellNew] 
+      • "NullFile"=""
+    ► Sahiplik Al ekle
+      • [HKCR\*\shell\runas]
+      • @="Sahipliği Al"
+      • "Icon"="imageres.dll,73"
+      • "NoWorkingDirectory"=""
+      • [HKCR\*\shell\runas\command]
+      • @="cmd.exe /c takeown /f \"%1\" && ica \"%1\" /grant administrators:F"
+      • "IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && ica \"%1\" /grant administrators:F"
+    ► Ayarlar önerilen içeriği kapatır
+      • [HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+      • "SubscribedContent-338393Enabled"=dword:00000000
+      • "SubscribedContent-353694Enabled"=dword:00000000
+      • "SubscribedContent-353696Enabled"=dword:00000000
+    ► PC kapatma hızını arttırmak
+      • [HKCU\Control Panel\Desktop]
+      • "AutoEndTasks"="1"
+      • "HungAppTimeout"="10000"
+      • "WaitToKillAppTime"="20000"
+      • "LowLevelHooksTimeout"="1000"
+      • "MenuShowDelay"="8"
+      • [HKLM\SYSTEM\CurrentControlSet\Control]
+      • "WaitToKillServiceTimeout"="2000"
+      • [HKCU\Control Panel\Mouse]
+      • "MouseHoverTime"="8"
+      • [HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+    ► Disk taraması ve geçersiz kısayol taramasını kapat  
+      • "NoLowDiskSpaceChecks"=dword:00000001
+      • "LinkResolveIgnoreLinkInfo"=dword:00000001
+      • "NoResolveSearch"=dword:00000001
+      • "NoResolveTrack"=dword:00000001
+      
 Call :dword "HKCU\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\QuietHours" "Enable" 1 & :: Odak Yardımı aktifleştiriliyor
 Call :dword "HKCU\Software\Microsoft\Narrator\QuickStart" "SkipQuickStart" 1 & :: Narrator QuickStart kapatılıyor.
 Call :dword "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.Photos.8wekyb3d8bbwe" Disabled 1 & ::Fotoğraflar uygulaması arka planda çalışmaz
@@ -264,7 +269,7 @@ Call :dword "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" "ExcludeWUD
 Call :dword "HKLM\Software\Policies\Microsoft\Windows\DriverSearching" "SearchOrderConfig" "0"
 :: -------------
 :: Performans seçenekleri
-Call :dword "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" "VisualFXSetting" 3 & :: Performans seçeneklerini özel yapar
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" "VisualFXSetting" 3 & :: Performans seçeneklerini özel yapar
 :: Pencerelerin içindeki kontrolleri ve öğeleri canlandırın
 :: Menüleri soldurun veya görünüme kaydırın
 :: Araç İpuçlarını soldurun veya görünüme kaydırın
@@ -290,4 +295,3 @@ Call :dword "HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling" "Power
 Call :sz "HKCU\Control Panel\Accessibility\StickyKeys" "Flags" 506 & :: Yapışkan tuşları kapatır
 Call :sz "HKCU\Control Panel\Accessibility\ToggleKeys" "Flags" "58" & :: Yapışkan tuşları kapatır
 Call :sz "HKCU\Control Panel\Accessibility\Keyboard Response" "Flags" "122" & :: Filtre tuşlarını kapatır
-
