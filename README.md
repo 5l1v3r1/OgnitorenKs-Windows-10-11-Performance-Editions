@@ -42,9 +42,6 @@ Aşağıda ► işaretinde yazdığım komutlar servisleri varsayılan haline ge
     • fhsvc = Dosya Geçmişi Hizmeti
       ► sc config fhsvc start= demand&net start fhsvc /y
       
-    • wscsvc = Güvenlik Merkezi
-      ► sc config wscsvc start= auto&net start wscsvc /y
-      
     • PimIndexMaintenanceSvc = Kişi Verileri
       ► sc config PimIndexMaintenanceSvc start= demand&net start PimIndexMaintenanceSvc /y
       
@@ -79,9 +76,6 @@ Aşağıda ► işaretinde yazdığım komutlar servisleri varsayılan haline ge
     
     • SysMain = Hızlı Getir
       ► sc config SysMain start= auto&net start SysMain /y
-    
-    • SgrmBroker = Sistem Koruma Çalışma Zamanı İzleyicisi Aracısı
-      ► sc config SgrmBroker start= auto&net start SgrmBroker /y
     
     • TapiSrv = Telefon hizmeti
       ► sc config TapiSrv start= demand&net start TapiSrv /y
@@ -187,4 +181,10 @@ Aşağıda ► işaretinde yazdığım komutlar servisleri varsayılan haline ge
     • DiagTrack = Bağlı Kullanıcı Deneyimi ve Telemetrisi
     • dmwappushservice = Cihaz Yönetimi Kablosuz Uygulama Protokolü (WAP) Anında İleti Yönlendirme Hizmeti
     • diagnosticshub.standartcollector.service = Microsoft (R) Diagnostics Hub Standard Collector Service
+    • SecurityHealthService = Windows Güvenlik Hizmeti
+    • Sense = Windows Defender Advanced Threat Protection Service 
+    • SgrmBroker = Sistem Koruma Çalışma Zamanı İzleyicisi Aracısı
+    • WdNisSvc = Microsoft Defender Antivirüs Ağ İnceleme Hizmeti
+    • WinDefend = Microsoft Defender Virüsten Koruma Hizmeti
+    • wscsvc = Güvenlik Merkezi
     
