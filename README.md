@@ -3,15 +3,6 @@
 
 - ISO kalıbı UUPDump sitesinden indirilmiştir.
  
-#### Sistemde Çalışma Durumu Değiştirilen Servisler
-    • StorSvc = Depolama hizmeti = (Otomatik > Manuel)
-      ► sc config StorSvc start= auto&net start StorSvc /y
-
-#### Sistemde Kaldırılan Servisler
-    • DiagTrack = Bağlı Kullanıcı Deneyimi ve Telemetrisi
-    • dmwappushservice = Cihaz Yönetimi Kablosuz Uygulama Protokolü (WAP) Anında İleti Yönlendirme Hizmeti
-    • diagnosticshub.standartcollector.service = Microsoft (R) Diagnostics Hub Standard Collector Service
-    
 #### Sistemde Kapatılan Servisler
 Aşağıda ► işaretinde yazdığım komutlar servisleri varsayılan haline getirip açmaktadır. Kullanmak için CMD yönetici olarak açtıktan sonra kopyala,yapıştır yapıp uygulamanız gerekmektedir.
  
@@ -187,5 +178,13 @@ Aşağıda ► işaretinde yazdığım komutlar servisleri varsayılan haline ge
       
     • DPS = Tanı ilkesi hizmeti
       ► sc config DPS start= auto&net start DPS /y
+      
+#### Sistemde Çalışma Durumu Değiştirilen Servisler
+    • StorSvc = Depolama hizmeti = (Otomatik > Manuel)
+      ► sc config StorSvc start= auto&net start StorSvc /y
 
+#### Sistemde Kaldırılan Servisler
+    • DiagTrack = Bağlı Kullanıcı Deneyimi ve Telemetrisi
+    • dmwappushservice = Cihaz Yönetimi Kablosuz Uygulama Protokolü (WAP) Anında İleti Yönlendirme Hizmeti
+    • diagnosticshub.standartcollector.service = Microsoft (R) Diagnostics Hub Standard Collector Service
     
