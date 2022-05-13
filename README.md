@@ -13,7 +13,7 @@
     • diagnosticshub.standartcollector.service = Microsoft (R) Diagnostics Hub Standard Collector Service
     
 #### Sistemde Kapatılan Servisler
-- Aşağıda ► işaretinde yazdığım komutlar servisleri varsayılan haline getirip açmaktadır. Kullanmak için CMD yönetici olarak açtıktan sonra kopyala,yapıştır yapıp uygulamanız gerekmektedir.
+Aşağıda ► işaretinde yazdığım komutlar servisleri varsayılan haline getirip açmaktadır. Kullanmak için CMD yönetici olarak açtıktan sonra kopyala,yapıştır yapıp uygulamanız gerekmektedir.
  
     • SCardSvr = Akıllı Kart
       ► sc config SCardSvr start= demand&net start SCardSvr /y
