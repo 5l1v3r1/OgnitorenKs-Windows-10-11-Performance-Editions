@@ -2,6 +2,8 @@
 - Lisans durumunuza göre istediğinizi seçebilirsiniz. Sources klasörü içerisine eklenen ei.cfg nedeniyle kurulum ekranında lisanslı sürümü otomatik seçmez. Otomatik seçmesini istiyorsanız Rufus ile USB'ye yazdıktan sonra Sources klasörü içerisinde ei.cfg dosyasını silin.
 
 - ISO kalıbı UUPDump sitesinden indirilmiştir.
+
+- 
  
 ### Sistemde Kapatılan Servisler
 Aşağıda ► işaretinde yazdığım komutlar servisleri varsayılan haline getirip açmaktadır. Kullanmak için CMD yönetici olarak açtıktan sonra kopyala,yapıştır yapıp uygulamanız gerekmektedir.
@@ -219,7 +221,7 @@ Aşağıda ► işaretinde yazdığım komutlar servisleri varsayılan haline ge
  #### Silinenler
     • [-HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
     • [-HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}]
-
+    
 #### Eklenenler
     ► ;Sağ tık Yeni bölümüne Bat dosyası oluşturma ekle
       • [HKCR\.bat\ShellNew] 
