@@ -85,9 +85,76 @@ Direkt olarak bypass seçeneği entegre edilmedi. Setup kısmında alt bölümde
 Hayır, güncellemeler kapalı değildir. Manuel moda alınmıştır. Yer yer otomatiğe alınmış şekilde davranabilir. 2050 yılına kadar ertelemek için Windows 10/11 Edit bölümünden 'Güncellemeleri 2050 yılına kadar ertele' seçeneğini kullanabilirsiniz. Bu şekilde kullanım sağlarsanız Microsoft Store gibi uygulamalarda sorun yaşamazsınız. Güncelleme hizmeti tamamen kapatılırsa sorunlar yaşanabilir.
 
 ### Windows 10-11 sistemlerde güncelleme yapmalımıyız?
-Evet, yapabilirsiniz. Güncelleme yaptıktan sonra bazı ayarlar bozulabilir. Bazı uygulamalar yeniden yüklenebilir. Bunları düzeltmek için Toolbox'dan 
+Evet, yapabilirsiniz. Güncelleme yaptıktan sonra bazı ayarlar bozulabilir. Bazı uygulamalar yeniden yüklenebilir. Bunları düzeltmek için Toolbox'dan 'Güncelleme Sonrası Temizlik' bölümünü çalıştırınız.
 
+### Windows 10-11 sistemlerde geri yükleme kapalı mı?
+Evet, kapalıdır. Sistem geri yükleme hizmeti zaman içinde fazla yer tutar ayrıca kullanıldığı zamanlarda sistemde aksamalara neden olabilir. Yeniden açmak için aşağıdaki komutları yönetici yetkili CMD ekranında uyguladıktan sonra reset atınız. Toolbox'dan açmak için 'Hizmetleri Yönet' bölümüne bakınız.
+Bu bölümü açtığınızda Dosya geçmişi hizmeti, gölge kopya hizmetleri de açılacaktır. 
 
+    • sc config SDRSVC start= demand 
+    • net start SDRSVC /y
+    • sc config VSS start= demand 
+    • net start VSS /y
+    • sc config swprv start= demand 
+    • net start swprv /y
+    • sc config wbengine start= demand 
+    • net start wbengine /y
+    • sc config fhsvc start= demand 
+    • net start fhsvc /y
+    • schtasks /change /TN "\Microsoft\Windows\SystemRestore\SR" /ENABLE 
+    • reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\SystemRestore" /v "DisableConfig" /t REG_DWORD /d 0 /f
+    • reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\SystemRestore" /v "DisableSR" /t REG_DWORD /d 0 /f
+
+### Windows 10-11 sistemlerde Sysmain (hızlı getir) kapalı mı?
+Evet, kapalıdır. SSD'ler için gereksiz bir hizmettir. Harddiskiniz var ve kullanmak isterseniz Toolbox'dan 'Hizmetleri Yönet' bölümüne bakınız. Komut ile açmak için aşağıdaki kodları yönetici yetkili CMD erkanına uyguladıktan sonra reset atınız.
+
+    • sc config SysMain start=auto 
+    • net start SysMain /y
+
+### Windows 10-11 sistemlerde Hibernate (hızlı başlangıç) kapalı mı?
+Evet, kapalıdır. Bazı durumlarda sistemin kapanmamasına yol açabiliyor. Bilgisayarın kendiliğinden açılmasına kadar bir takım hataları yer yer oluşabiliyor. Toolbox'dan 'Hizmetleri Yönet' bölümünden açabilirsiniz. Komut ile açmak için aşağıdaki kodları yönetici yetkili CMD erkanına uyguladıktan sonra güç ayarlarından aktifleştirin ve reset atın.
+
+    • powercfg /hibernate on
+    • reg add "HKLM\SYSTEM\CurrentControlSet\Control\Power" /v "HibernateEnabled" /t REG_DWORD /d 1 /f
+    • reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v "HiberbootEnabled" /t REG_DWORD /d 1 /f
+
+### Windows 10-11 sistemlerde Media Player kapalı mı?
+Hayır, kapalı değildir.
+
+### Windows 10-11 sistemlerde Internet Explorer kapalı mı?
+Hayır, kapalı değildir. Kaldırıldığında marketteki bazı uygulama ve oyunlarda hatalara neden olduğuna dair geri bildirimler aldım.
+
+### Windows 10-11 sistemlerde Bitlocker (Sürücü şifreleme) kapalı mı?
+Evet, kapalıdır. Toolbox'dan açmak için 'Hizmetleri Yönet' bölümüne bakınız. Komut ile açmak için aşağıdaki kodları yönetici yetkili CMD erkanına uyguladıktan sonra reset atınız.
+
+    • sc config BDESVC start= demand
+    • net start BDESVC /y
+    
+### Sağ-tık sahiplik al ne işe yaramaktadır? Yönetici olarak çalıştırdan farkı nedir?
+Bazı sistem dosyalarını düzenlemek veya silmek istediğimizde silerken hata alırız. Bunu aşmak için öncelikle dosya yönetim yetkisini TrustedInstaller'den mevcut kullanıcıya almamız gerekir. Sahiplik al butonu bu işlemi tek tıkla yapar. Yönetici olarak çalıştırma seçeneği bu tarz sahiplik yetkilerini kapsamaz. O an için mevcut kullanıcıya en üst düzeyde yetki imkanı verir ancak bu kısıtlıdır.
+
+### CompactOS nedir?
+Sistem dosyalarını sıkıştırarak 3-4 GB'lık ek bir alan açar. Bunu uyguladıktan sonra sistem açılışı ağırlaşabilir.
+
+### Windows 10-11 sistemler için uygun driver yok, driver yüklerken hata alıyorum?
+Uyumluluk hizmetleri kapatılmıştır. Bu tarz bir uyumsuzluk söz konusuysa Windows 7 veya Windows 8 için olan driver dosyasını yüklemeden önce sağ tık özellikler > Uyumluluk > Windows 7 veya 8 olarak değiştirdikten sonra yükleme işlemini başlatınız. Sorunsuz kurulum gerçekleştirecektir. Bunu yapmazsınız hata almanız doğaldır.
+
+### Kurulumda hata alıyorum, nasıl çözerim?
+Tüm sistemler yayınlanmadan önce 3 ayrı sistemde test edilip yükleniyor. Olası indirme hatalarına karşı ilgili sayfalarda batch ile hazırladığm HashChecker aracı bulunmaktadır. Bu araç ile ISO dosyasını kontrol edip, hatalı indirmeyi tespit edebilirsiniz. HashChecker dosyası ile ISO dosyasını ismini değiştirmeden aynı klasöre koyun. Klasör yolunda Türkçe karakter veya boşluk olmasın yoksa hata alırsınız. 
+Alternatif olarak BIOS ayarlarınızı sıfırlayabilir. Uygun bir şekilde düzenlenmemiş ayarları düzeltebilirsiniz. Rufus ile cihazınıza uygun bir şekilde GPT / MBR kurulum için yapılandırmanız gerekiyor. 
+
+### UEFI destekli cihazıma MBR kurulum yapılmış GPT kurulum yaparken hata alıyorum nasıl düzeltebilirim?
+Rufus ile GPT disk biçiminde diski hazırlayın. BIOS ayarlarından UEFI aktifleştirin ve USB'den boot edip setup alanına ulaşın. Açılan ekrandan alt menüden setup alanını başlatın. Daha sonra Shift + F10 tuşlayarak CMD ekranını açın. Açılan komut ekranına sırasıyla aşağıdaki komutları girerek diski tamamen sıfırlayın. 
+UYARI: Diskte yedeklenecek dosyaları farklı bir diske alın. Aşağıdaki işlemden sonra herşey silinecektir.
+
+    • diskpart
+    • list disk
+      • Burada listelenecek disklerden diskinize ait olanın numarasını bulun.
+    • select disk 0 (0 yazdığım yer disk numaranınızı yazacaksınız)
+    • clean
+    • convert gpt
+    • exit
+    • exit
 
 
 
