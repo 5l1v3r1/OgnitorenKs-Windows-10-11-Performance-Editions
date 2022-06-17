@@ -88,7 +88,7 @@ Hayır, güncellemeler kapalı değildir. Manuel moda alınmıştır. Yer yer ot
 ### Windows 10-11 sistemlerde güncelleme yapmalımıyız?
 Evet, yapabilirsiniz. Güncelleme yaptıktan sonra bazı ayarlar bozulabilir. Bazı uygulamalar yeniden yüklenebilir. Bunları düzeltmek için Toolbox'dan 'Güncelleme Sonrası Temizlik' bölümünü çalıştırınız.
 
-### Windows 10-11 sistemlerde geri yükleme kapalı mı?
+### Windows 10-11 sistemlerde sistem geri yükleme kapalı mı?
 Evet, kapalıdır. Sistem geri yükleme hizmeti zaman içinde fazla yer tutar ayrıca kullanıldığı zamanlarda sistemde aksamalara neden olabilir. Yeniden açmak için aşağıdaki komutları yönetici yetkili CMD ekranında uyguladıktan sonra reset atınız. Toolbox'dan açmak için 'Hizmetleri Yönet' bölümüne bakınız.
 Bu bölümü açtığınızda Dosya geçmişi hizmeti, gölge kopya hizmetleri de açılacaktır. 
 
@@ -151,7 +151,7 @@ UYARI: Diskte yedeklenecek dosyaları farklı bir diske alın. Aşağıdaki işl
     • diskpart
     • list disk
       • Burada listelenecek disklerden diskinize ait olanın numarasını bulun.
-    • select disk 0 (0 yazdığım yer disk numaranınızı yazacaksınız)
+    • select disk 0 (0 yazdığım yere disk numaranınızı yazacaksınız)
     • clean
     • convert gpt
     • exit
