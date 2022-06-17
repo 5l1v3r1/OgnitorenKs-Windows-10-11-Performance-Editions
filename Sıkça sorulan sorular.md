@@ -72,7 +72,20 @@ Konum hizmeti kapatılmıştır. Toolbox 'Hizmetleri yönet' bölümününden a�
     • sc config lfsvc start= demand
     • net start lfsvc /y
 
+### Windows 10-11 sistemlerde Bluetooth hizmeti çalışıyor mu?
+Evet, çalışıyor. Toolbox 'Hizmetleri Yönet' bölümündne açıp kapatabilirsiniz.
 
+### Windows 10-11 sistemlerde VMD driverlarda sorun yaşanır mı?
+VMD driverlar Setup alanı içine entegre edilmiştir. Herhangi bir sorun yaşanmaz. Driverları ekstradan indirip USB bellek içine atmanız gerekmez.
+
+### Windows 11 sistemde donanımınız yeterli değil hatası bypass edildi mi?
+Direkt olarak bypass seçeneği entegre edilmedi. Setup kısmında alt bölümde çıkan menüde Bypass logosuna basarak batch ile hazırladığım araç ile bu sorundan kurtulabilirsiniz. Rufus ile bypass'lı USB hazırlamanıza gerek yoktur. Sanal kurulumlarda da aynı şekilde bu engellemeyi bypass edebilirsiniz.
+
+### Windows 10-11 sistemlerde güncellemeler kapalı mı?
+Hayır, güncellemeler kapalı değildir. Manuel moda alınmıştır. Yer yer otomatiğe alınmış şekilde davranabilir. 2050 yılına kadar ertelemek için Windows 10/11 Edit bölümünden 'Güncellemeleri 2050 yılına kadar ertele' seçeneğini kullanabilirsiniz. Bu şekilde kullanım sağlarsanız Microsoft Store gibi uygulamalarda sorun yaşamazsınız. Güncelleme hizmeti tamamen kapatılırsa sorunlar yaşanabilir.
+
+### Windows 10-11 sistemlerde güncelleme yapmalımıyız?
+Evet, yapabilirsiniz. Güncelleme yaptıktan sonra bazı ayarlar bozulabilir. Bazı uygulamalar yeniden yüklenebilir. Bunları düzeltmek için Toolbox'dan 
 
 
 
