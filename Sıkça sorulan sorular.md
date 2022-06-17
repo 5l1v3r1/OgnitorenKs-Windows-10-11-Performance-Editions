@@ -55,7 +55,22 @@ Bazı geri bildirimlerde donanımı sorunlu olup pasif halde bırakarak kullanan
     • reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v "ExcludeWUDriversInQualityUpdate" /t REG_DWORD /d 0 /f 
     • reg add "HKLM\Software\Policies\Microsoft\Windows\DriverSearching" /v "SearchOrderConfig" /t REG_DWORD /d 1 /f 
 
+### Windows 10-11 sistemlerde Defender yüklü mü?
+Defender tamamen kaldırılmıştır. Güncelleme sonrası bazı bileşenleri yüklenebilir. Ancak hizmet çalışmayacaktır. Yeniden yüklenemez.
 
+### Valorant oyununda sorun yaşanır mı?
+Defender olmadığı için sorun yaşanacağını düşünenler olabiliyor. Herhangi bir sorun yok. Testler yapılmıştır. Valorant oyunu sorunsuz bir şekilde çalışmaktadır.
+
+### Windows 10-11 sistemlerde konum hizmeti çalışıyor mu?
+Konum hizmeti kapatılmıştır. Toolbox 'Hizmetleri yönet' bölümününden açılabilir. CMD üzerinden etkinleştirmek için aşağıdaki komutları yönetici yetkili CMD ekranına yapıştırın.
+
+    • reg delete "HKLM\SOFTWARE\Policies\Microsoft\Windows\LocationAndSensors" /v "DisableLocation" /f
+    • reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\Location" /v "Value" /t REG_SZ /d "Allow" /f
+    • reg add "HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\System" /v "AllowLocation" /t REG_DWORD /d "1" /f
+    • sc config NaturalAuthentication start= demand
+    • net start NaturalAuthentication /y
+    • sc config lfsvc start= demand
+    • net start lfsvc /y
 
 
 
