@@ -39,6 +39,11 @@ Kamera cihazının yönetimini sağlayan hizmet kapatılmıştır. Kameranızı 
     • sc config StiSvc start= demand
     • sc config FrameServer start= demand
     
+### Windows 10 sistemde mikrofon ayarlarına girerken bellek taşma hatası nasıl düzeltilir?
+Toolbox'dan Optimizasyon bölümünden SVChost Ram Optimizasyonu bölümünü uyguladıysanız bu sorunu yaşamanıza sebebiyet verebilir. Düzeltmek için aynı yerden kapatma komutunu uygulayınız. 
 
+Bir diğer ihtimal ise driver'dan kaynaklanır. Bunu çözmek için driverı donanım kimliği ile tespit edip indirmeniz gerekiyor. Eski driverı sildikten sonra yeni indirdiğiniz driverı uygulayarak çözebilirsiniz. Donanım kimliğiyle driver bulmayı bilmiyorsanız Google'dan aratıp bilgi sahibi olabilirsiniz. Birçok açıklayıcı rehber bulunmaktadır.
+
+Bu iki yolda çözüme ulaştırmadıysa PC'nizde farklı bir sorun söz konusudur. Bildiğim başka bir çözümü yoktur.
  
 
