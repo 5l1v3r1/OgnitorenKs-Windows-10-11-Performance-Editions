@@ -9,6 +9,6 @@ Windows 8.1 sistemler artık güncellenmeyecek. Bu bölümde güncellemeyi durdu
 Evet yüklüdür. Microsoft Store / Mail / Takvim / Hesap makinesi / Ekran Yakalama / Appx Installer ve Store için gerekli olan servisler yüklüdür. Uygulama veya oyunlarda herhangi bir hata almazsınız. 
 ### Windows 10-11 sistemlerinizde yazıcım çalışmıyor, nasıl düzeltirim?
 Yazıcı hizmetleri kapalıdır. Açmak için Toolbox'dan  'Hizmetleri Yönet' bölümünden yazıcı hizmetini aktifleştirebilirsiniz. CMD üzerinden etkinleştirmek için aşağıdaki komutları yönetici yetkili CMD ekranına yapıştırın.
-  • sc config Spooler start= auto
-  • net start Spooler /y
+    • sc config Spooler start= auto
+    • net start Spooler /y
 
