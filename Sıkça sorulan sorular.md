@@ -20,6 +20,7 @@ Yazıcı hizmetleri kapalıdır. Yazıcı hizmeti otomatik ayarın dışında ç
     
 ### Windows 10-11 sistemlerinizde Fax cihazı çalışmıyor, nasıl düzeltirim?
 Fax hizmeti kaldırılmıştır. Fax cihazı evde bulunmayı geçtim artık normal şartlarda bile bulunması zor olan bir cihaz bundan dolayı hizmeti tamamen sildim. yeniden yüklemek için aşağıdaki komutları yönetici yetkili CMD ekranına uygulayabilirsiniz. 
+
     • Dism /Online /Add-Capability /CapabilityName:Print.Fax.Scan~~~~0.0.1.0
     • sc config Fax start= demand
     • sc config UmRdpService start= demand
