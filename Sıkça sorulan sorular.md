@@ -132,7 +132,7 @@ Evet, kapalıdır. Toolbox'dan açmak için 'Hizmetleri Yönet' bölümüne bak�
     • net start BDESVC /y
     
 ### Sağ-tık sahiplik al ne işe yaramaktadır? Yönetici olarak çalıştırdan farkı nedir?
-Bazı sistem dosyalarını düzenlemek veya silmek istediğimizde silerken hata alırız. Bunu aşmak için öncelikle dosya yönetim yetkisini TrustedInstaller'den mevcut kullanıcıya almamız gerekir. Sahiplik al butonu bu işlemi tek tıkla yapar. Yönetici olarak çalıştırma seçeneği bu tarz sahiplik yetkilerini kapsamaz. O an için mevcut kullanıcıya en üst düzeyde yetki imkanı verir ancak bu kısıtlıdır.
+Bazı sistem dosyalarını düzenlemek veya silmek istediğimizde hata alırız. Bunu aşmak için öncelikle dosya yönetim yetkisini TrustedInstaller'den mevcut kullanıcıya almamız gerekir. Sahiplik al butonu bu işlemi tek tıkla yapar. Yönetici olarak çalıştırma seçeneği bu tarz sahiplik yetkilerini kapsamaz. O an için mevcut kullanıcıya en üst düzeyde yetki imkanı verir ancak bu kısıtlıdır.
 
 ### CompactOS nedir?
 Sistem dosyalarını sıkıştırarak 3-4 GB'lık ek bir alan açar. Bunu uyguladıktan sonra sistem açılışı ağırlaşabilir.
