@@ -56,6 +56,14 @@ Bazı geri bildirimlerde donanımı sorunlu olup pasif halde bırakarak kullanan
     • reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v "ExcludeWUDriversInQualityUpdate" /t REG_DWORD /d 0 /f 
     • reg add "HKLM\Software\Policies\Microsoft\Windows\DriverSearching" /v "SearchOrderConfig" /t REG_DWORD /d 1 /f 
 
+### Windows 10-11 sistemlerde görev çubuğundaki arama bölümü çalışıyor mu?
+Evet, çalışıyor. Başlat menüsüne tıklayıp yazdığınızda zaten aynı işlevi gördüğü için arama simgesini sistemlerden kaldırdım. Görev çubuğuna sağ tıklayıp açabilirsiniz.
+
+### Windows 10-11 sistemlerde EdgeWebView2 yüklenmiyor, nasıl düzeltilir?
+EdgeWebView2'nin otomatik olarak yüklenmesini engelledim. Bazı ihtiyaç duyduğu alanlarda otomatik yükleniyor. Ancak manuel kurulumlarda hata alabilirsiniz. CMD üzerinden etkinleştirmek için aşağıdaki komutları yönetici yetkili CMD ekranına yapıştırın.
+
+    • reg add "HKLM\SOFTWARE\Policies\Microsoft\EdgeUpdate" /v "InstallDefault" /t REG_DWORD /d 1 /f
+
 ### Windows 10-11 sistemlerde Defender yüklü mü?
 Defender tamamen kaldırılmıştır. Güncelleme sonrası bazı bileşenleri yüklenebilir. Ancak hizmet çalışmayacaktır. Yeniden yüklenemez.
 
