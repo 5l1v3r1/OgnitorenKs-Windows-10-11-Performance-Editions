@@ -1,6 +1,6 @@
 # Windows 10 - 11 sık sorulan sorular
 ### Windows 10'mu Windows 11'mi kurmalıyım?
-Sistem gereksinimleri Windows 11'in ihtiyaçlarını karşılıyorsa Windows 11 kurabilirsiniz. Desteklemediği durumlarda TPM şartı arayan oyun veya uygulamalarda sorun yaşayabilirsiniz. Kurulum aşamalarında bu ihtiyaçları her ne kadar Bypass etme şansımız olsa da bu tarz durumlarda yaşayacağınız hatanın çözümü yoktur. Mecburen Windows 10 yüklemeniz gerekir. Windows 11'in en azından bir sürüm sonra daha kararlı olacağını düşünüyorum. 22H2 sürümünü beklemekte fayda var.
+Sistem gereksinimleri Windows 11'in ihtiyaçlarını karşılıyorsa Windows 11 kurabilirsiniz. Desteklemediği durumlarda TPM şartı arayan oyun veya uygulamalarda sorun yaşayabilirsiniz. Kurulum aşamalarında bu ihtiyaçları her ne kadar Bypass etme şansımız olsa da bu tarz durumlarda yaşayacağınız hatanın çözümü yoktur. Mecburen Windows 10 yüklemeniz gerekir. Windows 11'in bir sürüm sonra daha kararlı olacağını düşünüyorum. 22H2 sürümünü beklemekte fayda var.
 
 ### Sistemleri nasıl düzenliyorum?
 Sistemlerde yaptığım değişikliklerin bir kısmını kendi hazırladığım Builder.bat ile yapıyorum geri kalan bölümleri NTLite ücretsiz versiyonu ile düzenliyorum. Builder'ı daha önceden isteyenler için paylaşıyordum ancak yaptığım değişikliklerden sonra paylaşmama kararı aldım. Yapılan değişiklikler hakkında çok detaylı bir rehber hazırlıyorum. Yayınladığımda oradan bakabilirsiniz. Lütfen Builder.bat için istekte bulunmayınız.
@@ -33,11 +33,12 @@ Tarayıcı hizmetleri kapatılmıştır. Tarayıcı cihazıda maalesef her evde 
     • sc config FrameServer start= demand
     
 ### Windows 10-11 sistemlerinizde kamera cihazı çalışmıyor, nasıl düzeltirim?
-Kamera cihazının yönetimini sağlayan hizmet kapatılmıştır. Kameranızı çalışır ancak birden fazla kameraya erişmek istediğinden hata alabilirsiniz. Bunu engellemek için tarayıcı cihazları için uyguladığımız komutları burada da uyguluyoruz. Açmak için yönetici yetkili CMD ekranına aşağıdaki komutları uygulayın. Toolbox'dan açmak için Hizmetleri yönet bölümünden 'Kamera ve Tarayıcı hizmetini' açabilirsiniz.
+Kamera cihazının yönetimini sağlayan hizmet kapatılmıştır. Kameranızı çalışır ancak birden fazla uygulama kameraya erişmek istediğinden hata alabilirsiniz. Bu sorundan kurtulmak için tarayıcı cihazları için uyguladığımız komutları burada da uyguluyoruz. Açmak için yönetici yetkili CMD ekranına aşağıdaki komutları uygulayın. Toolbox'dan açmak için Hizmetleri yönet bölümünden 'Kamera ve Tarayıcı hizmetini' açabilirsiniz.
 
     • sc config WiaRpc start= demand
     • sc config StiSvc start= demand
     • sc config FrameServer start= demand
+    • sc config FrameServerMonitor start= demand
     
 ### Windows 10 sistemde mikrofon ayarlarına girerken alınan 'bellek taşma hatası' nasıl düzeltilir?
 Toolbox'dan Optimizasyon bölümünden SVChost Ram Optimizasyonu bölümünü uyguladıysanız bu sorunu yaşamanıza sebebiyet verebilir. Düzeltmek için aynı yerden kapatma komutunu uygulayınız. 
@@ -56,13 +57,24 @@ Bazı geri bildirimlerde donanımı sorunlu olup pasif halde bırakarak kullanan
     • reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v "ExcludeWUDriversInQualityUpdate" /t REG_DWORD /d 0 /f 
     • reg add "HKLM\Software\Policies\Microsoft\Windows\DriverSearching" /v "SearchOrderConfig" /t REG_DWORD /d 1 /f 
 
+### Windows 10-11 sistemlerde ayarlardan cihazlar bölümü açılmıyor, nasıl düzeltirim?
+Bu sorun Toolbox'dan 'Hizmetleri Yönet' bölümünden 'Uzak Masaüstü/Akış/Ağ hizmetleri' kapatıldığında yaşanır. Sorunu çözmek için bu bölümü aktif hale getirin. Bu bölümü açtıktan sonra Windows Search hizmeti de açılır. Onu kapatabilirsiniz. 
+
 ### Windows 10-11 sistemlerde görev çubuğundaki arama bölümü çalışıyor mu?
 Evet, çalışıyor. Başlat menüsüne tıklayıp yazdığınızda zaten aynı işlevi gördüğü için arama simgesini sistemlerden kaldırdım. Görev çubuğuna sağ tıklayıp açabilirsiniz.
 
 ### Windows 10-11 sistemlerde EdgeWebView2 yüklenmiyor, nasıl düzeltilir?
-EdgeWebView2'nin otomatik olarak yüklenmesini engelledim. Bazı ihtiyaç duyduğu alanlarda otomatik yükleniyor. Ancak manuel kurulumlarda hata alabilirsiniz. CMD üzerinden etkinleştirmek için aşağıdaki komutları yönetici yetkili CMD ekranına yapıştırın.
+EdgeWebView2'nin otomatik olarak yüklenmesini engelledim. Bazı ihtiyaç duyduğu alanlarda otomatik yüklenebiliyor. Ancak manuel kurulumlarda hata alabilirsiniz. CMD üzerinden etkinleştirmek için aşağıdaki komutları yönetici yetkili CMD ekranına yapıştırın.
 
     • reg add "HKLM\SOFTWARE\Policies\Microsoft\EdgeUpdate" /v "InstallDefault" /t REG_DWORD /d 1 /f
+
+### Windows 10-11 sistemlerde Dikte hizmeti(Konuşarak yazdırma) çalışıyor mu? (Windows + H)
+Hayır, çalışmıyor. Açılması yaptığım düzenlemeden dolayı mümkün değildir.
+
+### Windows 10-11 sistemlerde Narrator Quick Start (Ekran okuma) çalışıyor mu? 
+Hayır, çalışmıyor. Yapılan düzenleme kaldırılıp güncelleme sonrası yeniden yüklenme ihtimaline karşı regedit ile engellenmiştir.
+
+### Windows 10-11 sistemlerde Defender yüklü mü?
 
 ### Windows 10-11 sistemlerde Defender yüklü mü?
 Defender tamamen kaldırılmıştır. Güncelleme sonrası bazı bileşenleri yüklenebilir. Ancak hizmet çalışmayacaktır. Yeniden yüklenemez.
@@ -87,7 +99,7 @@ Evet, çalışıyor. Toolbox 'Hizmetleri Yönet' bölümündne açıp kapatabili
 ### Windows 10-11 sistemlerde VMD driverlarda sorun yaşanır mı?
 VMD driverlar Setup alanı içine entegre edilmiştir. Herhangi bir sorun yaşanmaz. Driverları ekstradan indirip USB bellek içine atmanız gerekmez.
 
-### Windows 11 sistemde donanımınız yeterli değil hatası bypass edildi mi?
+### Windows 11 sistem kurulumunda 'Bu bilgisayar Windows 11'i çalıştıramaz' hatası verir mi? 
 Direkt olarak bypass seçeneği entegre edilmedi. Setup kısmında alt bölümde çıkan menüde Bypass logosuna basarak batch ile hazırladığım araç ile bu sorundan kurtulabilirsiniz. Rufus ile bypass'lı USB hazırlamanıza gerek yoktur. Sanal kurulumlarda da aynı şekilde bu engellemeyi bypass edebilirsiniz.
 
 ### Windows 10-11 sistemlerde güncellemeler kapalı mı?
