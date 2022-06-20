@@ -1,4 +1,6 @@
 # Windows 10 - 11 sık sorulan sorular
+Aşağıda sorun çözümleri için verdiğim komutları uyguladıktan sonra sorun devam ederse mutlaka bilgisayarı yeniden başlatın.
+
 ### Windows 10'mu Windows 11'mi kurmalıyım?
 Sistem gereksinimleri Windows 11'in ihtiyaçlarını karşılıyorsa Windows 11 kurabilirsiniz. Desteklemediği durumlarda TPM şartı arayan oyun veya uygulamalarda sorun yaşayabilirsiniz. Kurulum aşamalarında bu ihtiyaçları her ne kadar Bypass etme şansımız olsa da bu tarz durumlarda yaşayacağınız hatanın çözümü yoktur. Mecburen Windows 10 yüklemeniz gerekir. Windows 11'in bir sürüm sonra daha kararlı olacağını düşünüyorum. 22H2 sürümünü beklemekte fayda var.
 
