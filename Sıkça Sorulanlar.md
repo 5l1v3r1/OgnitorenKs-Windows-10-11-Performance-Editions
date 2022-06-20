@@ -24,6 +24,9 @@ Fax hizmeti kaldırılmıştır. Fax cihazı evde bulunmayı geçtim artık norm
     • Dism /Online /Add-Capability /CapabilityName:Print.Fax.Scan~~~~0.0.1.0
     • sc config Fax start= demand
     • sc config UmRdpService start= demand
+
+### Spotlight çalışmıyor, nasıl düzeltirim?
+Spotlight özelliği çalışmıyor, çalışmasını sağlayacak bir düzenleme şu an için mevcut değildir.
     
 ### Tarayıcı çalışmıyor, nasıl düzeltirim?
 Tarayıcı hizmetleri kapatılmıştır. Tarayıcı cihazıda maalesef her evde bulunmuyor. Gereksiz işlem yükünü önlemek için kapatılmıştır. Açmak için yönetici yetkili CMD ekranına aşağıdaki komutları uygulayın. Toolbox'dan açmak için Hizmetleri yönet bölümünden 'Kamera ve Tarayıcı hizmetini' açabilirsiniz.
