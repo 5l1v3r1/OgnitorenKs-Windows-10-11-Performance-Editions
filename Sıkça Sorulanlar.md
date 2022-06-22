@@ -38,7 +38,7 @@ Tarayıcı hizmetleri kapatılmıştır. Tarayıcı cihazıda maalesef her evde 
     • sc config FrameServer start= demand
 
 ### Hızlı kullanıcı değiştiremiyorum, nasıl düzeltirim?
-Güncel sistemlerde bu ayar varsayılan böyle bir sorun yaşamazsınız. Eski düzenlemelerimden birini kullanıyorsanız sorunu çözmek için aşağıdaki komutları yönetici yetkili CMD ekranına yapıştırın ve reset atın.
+Güncel sistemlerde bu ayar varsayılan olduğu için böyle bir sorun yaşamazsınız. Eski düzenlemelerimden birini kullanıyorsanız sorunu çözmek için aşağıdaki komutları yönetici yetkili CMD ekranına yapıştırın ve reset atın.
 
     • reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "HideFastUserSwitching" /t REG_DWORD /d 0 /f 
     • reg add "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Policies\System" /v "HideFastUserSwitching" /t REG_DWORD /d 0 /f
