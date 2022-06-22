@@ -36,7 +36,14 @@ Tarayıcı hizmetleri kapatılmıştır. Tarayıcı cihazıda maalesef her evde 
     • sc config WiaRpc start= demand
     • sc config StiSvc start= demand
     • sc config FrameServer start= demand
-    
+
+### Hızlı kullanıcı değiştiremiyorum, nasıl düzeltirim?
+Güncel sistemlerde bu ayar varsayılan böyle bir sorun yaşamazsınız. Eski düzenlemelerimden birini kullanıyorsanız sorunu çözmek için aşağıdaki komutları yönetici yetkili CMD ekranına yapıştırın ve reset atın.
+
+    • reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "HideFastUserSwitching" /t REG_DWORD /d 0 /f 
+    • reg add "HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Policies\System" /v "HideFastUserSwitching" /t REG_DWORD /d 0 /f
+    • sc config seclogon start= demand
+
 ### Kamera çalışmıyor, nasıl düzeltirim?
 Kamera cihazının yönetimini sağlayan hizmet kapatılmıştır. Kameranızı çalışır ancak birden fazla uygulama kameraya erişmek istediğinden hata alabilirsiniz. Bu sorundan kurtulmak için tarayıcı cihazları için uyguladığımız komutları burada da uyguluyoruz. Açmak için yönetici yetkili CMD ekranına aşağıdaki komutları uygulayın. Toolbox'dan açmak için Hizmetleri yönet bölümünden 'Kamera ve Tarayıcı hizmetini' açabilirsiniz.
 
