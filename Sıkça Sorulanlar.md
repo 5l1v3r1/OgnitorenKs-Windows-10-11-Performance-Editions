@@ -36,6 +36,7 @@ Tarayıcı hizmetleri kapatılmıştır. Tarayıcı cihazıda maalesef her evde 
     • sc config WiaRpc start= demand
     • sc config StiSvc start= demand
     • sc config FrameServer start= demand
+    • sc config FrameServerMonitor start= demand
 
 ### Hızlı kullanıcı değiştiremiyorum, nasıl düzeltirim?
 Güncel sistemlerde bu ayar varsayılan olduğu için böyle bir sorun yaşamazsınız. Eski düzenlemelerimden birini kullanıyorsanız sorunu çözmek için aşağıdaki komutları yönetici yetkili CMD ekranına yapıştırın ve reset atın.
