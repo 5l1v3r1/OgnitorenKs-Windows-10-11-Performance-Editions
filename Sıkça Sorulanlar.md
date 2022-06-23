@@ -154,7 +154,7 @@ Evet, kapalıdır. Bazı durumlarda sistemin kapanmamasına yol açabiliyor. Bil
 Hayır, kapalı değildir.
 
 ### Internet Explorer kapalı mı?
-Hayır, kapalı değildir. Kaldırıldığında marketteki bazı uygulama ve oyunlarda hatalara neden olduğuna dair geri bildirimler aldım.
+Hayır, kapalı değildir.
 
 ### Bitlocker (Sürücü şifreleme) kapalı mı?
 Evet, kapalıdır. Toolbox'dan açmak için 'Hizmetleri Yönet' bölümüne bakınız. Komut ile açmak için aşağıdaki kodları yönetici yetkili CMD erkanına uyguladıktan sonra reset atınız.
